@@ -1,87 +1,85 @@
 ﻿using System;
 using System.Collections.Generic;
 
-class Program1
+class CinemaApp
 {
+    static List<string> seats = new List<string> { "A1", "A2", "A3", "B1", "B2", "B3" };
+    static List<string> bookedSeats = new List<string>();
+
     static void Main()
     {
-        List<string> sitze = new List<string> { "A1", "A2", "A3", "A4", "A5" };
-        List<string> gebuchteSitze = new List<string>();
-
-        while (true)
+        bool running = true;
+        while (running)
         {
             Console.Clear();
-            Console.WriteLine("🎬 Kinoticket-Buchungssystem 🎟️");
-            Console.WriteLine("---------------------------------");
+            Console.WriteLine("🎬 Kinoticketsystem 🎟️");
+            Console.WriteLine("-----------------------");
             Console.WriteLine("1. Verfügbare Sitzplätze anzeigen");
             Console.WriteLine("2. Sitzplatz buchen");
             Console.WriteLine("3. Ticket drucken");
             Console.WriteLine("4. Beenden");
-            Console.Write("Ihre Auswahl: ");
-            string wahl = Console.ReadLine();
+            Console.Write("Ihre Wahl: ");
 
-            switch (wahl)
+            string choice = Console.ReadLine();
+
+            switch (choice)
             {
                 case "1":
-                    ZeigeVerfuegbareSitze(sitze, gebuchteSitze);
+                    ShowSeats();
                     break;
                 case "2":
-                    BucheSitz(sitze, gebuchteSitze);
+                    BookSeat();
                     break;
                 case "3":
-                    DruckeTicket(gebuchteSitze);
+                    PrintTicket();
                     break;
                 case "4":
-                    return;
+                    running = false;
+                    break;
                 default:
-                    Console.WriteLine("❌ Ungültige Auswahl — bitte erneut versuchen!");
+                    Console.WriteLine("❌ Ungültige Option, bitte erneut versuchen.");
                     break;
             }
 
-            Console.WriteLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
-            Console.ReadKey();
+            if (running)
+            {
+                Console.WriteLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
+                Console.ReadKey();
+            }
         }
     }
 
-    static void ZeigeVerfuegbareSitze(List<string> sitze, List<string> gebuchteSitze)
+    static void ShowSeats()
     {
-        Console.WriteLine("\n🪑 Verfügbare Sitzplätze:");
-        foreach (var sitz in sitze)
+        Console.WriteLine("Verfügbare Sitzplätze:");
+        foreach (var seat in seats)
         {
-            if (!gebuchteSitze.Contains(sitz))
-                Console.Write(sitz + " ");
+            if (!bookedSeats.Contains(seat))
+                Console.WriteLine(seat);
         }
-        Console.WriteLine();
     }
 
-    static void BucheSitz(List<string> sitze, List<string> gebuchteSitze)
+    static void BookSeat()
     {
-        Console.Write("\nGeben Sie den Sitzplatz ein, den Sie buchen möchten (z.B. A3): ");
-        string sitzwahl = Console.ReadLine();
-
-        if (sitze.Contains(sitzwahl) && !gebuchteSitze.Contains(sitzwahl))
+        Console.Write("Welchen Sitzplatz möchten Sie buchen? ");
+        string seatChoice = Console.ReadLine();
+        if (seats.Contains(seatChoice) && !bookedSeats.Contains(seatChoice))
         {
-            gebuchteSitze.Add(sitzwahl);
-            Console.WriteLine($"✅ Sitzplatz {sitzwahl} erfolgreich gebucht!");
+            bookedSeats.Add(seatChoice);
+            Console.WriteLine($"✅ Sitzplatz {seatChoice} erfolgreich gebucht!");
         }
         else
         {
-            Console.WriteLine("❌ Sitzplatz ist nicht verfügbar oder existiert nicht.");
+            Console.WriteLine("❌ Sitzplatz ungültig oder bereits gebucht.");
         }
     }
 
-    static void DruckeTicket(List<string> gebuchteSitze)
+    static void PrintTicket()
     {
-        if (gebuchteSitze.Count == 0)
+        Console.WriteLine("Ihre gebuchten Tickets:");
+        foreach (var seat in bookedSeats)
         {
-            Console.WriteLine("⚠️ Es wurden noch keine Sitzplätze gebucht!");
-            return;
-        }
-
-        Console.WriteLine("\n🎫 Gebuchte Tickets:");
-        foreach (var sitz in gebuchteSitze)
-        {
-            Console.WriteLine($"- Sitzplatz {sitz}");
+            Console.WriteLine($"🎫 {seat} - Preis: 10€");
         }
     }
 }
