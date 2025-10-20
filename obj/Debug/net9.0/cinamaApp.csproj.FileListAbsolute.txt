@@ -1,0 +1,14 @@
+C:\Users\USER\mzko\cinamaApp\bin\Debug\net9.0\cinamaApp.exe
+C:\Users\USER\mzko\cinamaApp\bin\Debug\net9.0\cinamaApp.deps.json
+C:\Users\USER\mzko\cinamaApp\bin\Debug\net9.0\cinamaApp.runtimeconfig.json
+C:\Users\USER\mzko\cinamaApp\bin\Debug\net9.0\cinamaApp.dll
+C:\Users\USER\mzko\cinamaApp\bin\Debug\net9.0\cinamaApp.pdb
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\cinamaApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\cinamaApp.AssemblyInfoInputs.cache
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\cinamaApp.AssemblyInfo.cs
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\cinamaApp.csproj.CoreCompileInputs.cache
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\cinamaApp.dll
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\refint\cinamaApp.dll
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\cinamaApp.pdb
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\cinamaApp.genruntimeconfig.cache
+C:\Users\USER\mzko\cinamaApp\obj\Debug\net9.0\ref\cinamaApp.dll
